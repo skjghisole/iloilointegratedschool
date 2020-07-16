@@ -2,18 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 // reactstrap components
 import {
-  Button,
-  Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
-  NavItem,
-  Nav,
   Container,
-  UncontrolledTooltip,
 } from "reactstrap";
 
 import Logo from 'assets/img/iisAssets/logo.png'
@@ -25,11 +16,6 @@ function ScrollTransparentNavbar() {
       ? ""
       : " navbar-transparent"
   );
-  const [buyButtonColor, setBuyButtonColor] = React.useState(
-    (document.documentElement.scrollTop > 499 || document.body.scrollTop) > 499
-      ? "info"
-      : "neutral"
-  );
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -37,13 +23,11 @@ function ScrollTransparentNavbar() {
         document.body.scrollTop > 499
       ) {
         setNavbarColor("");
-        setBuyButtonColor("info");
       } else if (
         document.documentElement.scrollTop < 500 ||
         document.body.scrollTop < 500
       ) {
         setNavbarColor(" navbar-transparent");
-        setBuyButtonColor("neutral");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -66,7 +50,7 @@ function ScrollTransparentNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand to="/" tag={Link} id="navbar-brand" className="iis">
-              <img src={Logo} className="navbar-asset-logo"/>
+              <img src={Logo} alt={"..."} className="navbar-asset-logo"/>
               Iloilo Integrated School
             </NavbarBrand>
           </div>
