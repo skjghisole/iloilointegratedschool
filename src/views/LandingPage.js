@@ -61,6 +61,18 @@ function AboutUs() {
                   </Col>
                 </Row>
                 <Row>
+                   <Col md="4">
+                    <div className="info info-hover">
+                      <div className="icon icon-info icon-circle">
+                        <i className="now-ui-icons education_atom"></i>
+                      </div>
+                      <h4 className="info-title">Multiple Intelligences</h4>
+                      <p className="description">
+                        CloudCheckr provides summary and detailed usage
+                        statistics for resources.
+                      </p>
+                    </div>
+                  </Col>
                   <Col md="4">
                     <div className="info info-hover">
                       <div className="icon icon-success icon-circle">
@@ -70,18 +82,6 @@ function AboutUs() {
                       <p className="description">
                         Cross-account dashboards provide sophisticated reporting
                         for enterprise.
-                      </p>
-                    </div>
-                  </Col>
-                  <Col md="4">
-                    <div className="info info-hover">
-                      <div className="icon icon-info icon-circle">
-                        <i className="now-ui-icons education_atom"></i>
-                      </div>
-                      <h4 className="info-title">Resource Utilization</h4>
-                      <p className="description">
-                        CloudCheckr provides summary and detailed usage
-                        statistics for resources.
                       </p>
                     </div>
                   </Col>
@@ -101,7 +101,6 @@ function AboutUs() {
               </Container>
             </div>
           </div>
-          <div className="separator-line bg-info"></div>
           <div className="projects-5">
             <Container>
               <Row>
@@ -238,6 +237,7 @@ function AboutUs() {
                   </Card>
                 </Col>
               </Row>
+              <hr />
             </Container>
           </div>
           <div className="about-team team-4">
@@ -474,6 +474,7 @@ function AboutUs() {
                   </Card>
                 </Col>
               </Row>
+              <hr/>
             </Container>
           </div>
           <div className="about-office">
@@ -525,6 +526,7 @@ function AboutUs() {
                   ></img>
                 </Col>
               </Row>
+              <hr/>
             </Container>
           </div>
           <div className="about-contact">

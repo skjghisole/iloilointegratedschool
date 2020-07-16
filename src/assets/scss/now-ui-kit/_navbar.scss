@@ -1,3 +1,14 @@
+.iis {
+    font-size: 1.5em !important;
+    font-family: Comic Sans MS;
+}
+
+@media (max-width: 600px) {
+    .iis {
+        font-size: 1.2em !important;
+    }
+}
+
 .navbar{
     padding-top: $navbar-padding-base;
     padding-bottom: $navbar-padding-base;

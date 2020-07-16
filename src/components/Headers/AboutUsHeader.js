@@ -26,7 +26,7 @@ function AboutUsHeader() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/bg32.jpg") + ")",
+            backgroundImage: "url(" + require("assets/img/iisAssets/header-background.jpg") + ")",
           }}
           ref={pageHeader}
         ></div>
