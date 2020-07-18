@@ -13,3 +13,9 @@
         left: 0;
     }
 }
+
+.onlyMobile {
+    @media (min-width: 760px) {
+        display: none;
+    }
+}

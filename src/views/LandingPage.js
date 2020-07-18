@@ -4,7 +4,6 @@ import Select from "react-select";
 
 // reactstrap components
 import {
-  Badge,
   Button,
   Card,
   CardBody,
@@ -24,7 +23,12 @@ import {
 // core components
 import NavBar from "components/Navbars/ScrollTransparentNavbar.js";
 import AboutUsHeader from "components/Headers/AboutUsHeader.js";
+import AssetHeader from "components/Headers/AssetHeader.js";
+import MissionAndVision from "components/Sections/MissionAndVision.js";
 import Footer from "components/Footers/Footer.js";
+import Asset1 from "assets/img/iisAssets/asset_1.jpg";
+import Asset2 from "assets/img/iisAssets/asset_2.jpg";
+import Asset3 from "assets/img/iisAssets/asset_3.jpg";
 
 function AboutUs() {
   const [specialitySelect, setSpecialitySelect] = React.useState(null);
@@ -52,11 +56,9 @@ function AboutUs() {
               <Container>
                 <Row>
                   <Col className="mr-auto ml-auto" md="8">
-                    <h2 className="title">Simpler. Smarter. Faster.</h2>
+                    <h2 className="title">Creativity begins with Affinity</h2>
                     <h4 className="description">
-                      The CloudCheckr Cloud Management Platform (CMP) provides
-                      full visibility and control to reduce costs, improve
-                      cybersecurity posture, and automate critical tasks.
+                     We believe that every child is a unique individual with strengths, weaknesses, aptitudes, interests and capabilities
                     </h4>
                   </Col>
                 </Row>
@@ -68,32 +70,29 @@ function AboutUs() {
                       </div>
                       <h4 className="info-title">Multiple Intelligences</h4>
                       <p className="description">
-                        CloudCheckr provides summary and detailed usage
-                        statistics for resources.
+                        Breaking from traditional definitions of intelligence through a non-linear way of learning.
                       </p>
                     </div>
                   </Col>
                   <Col md="4">
                     <div className="info info-hover">
                       <div className="icon icon-success icon-circle">
-                        <i className="now-ui-icons objects_globe"></i>
+                        <i className="now-ui-icons business_bulb-63"></i>
                       </div>
-                      <h4 className="info-title">Asset Management</h4>
+                      <h4 className="info-title">Experiential Learning</h4>
                       <p className="description">
-                        Cross-account dashboards provide sophisticated reporting
-                        for enterprise.
+                        Learning through reflection on hands-on activities.
                       </p>
                     </div>
                   </Col>
                   <Col md="4">
                     <div className="info info-hover">
-                      <div className="icon icon-primary icon-circle">
-                        <i className="now-ui-icons tech_watch-time"></i>
+                      <div className="icon icon-warning icon-circle">
+                        <i className="now-ui-icons users_single-02"></i>
                       </div>
-                      <h4 className="info-title">Self-Healing</h4>
+                      <h4 className="info-title">Child Centered</h4>
                       <p className="description">
-                        CloudCheckr enables users to save money, time, and
-                        effort.
+                        Promoting the development of a child's personal qualities rather than training or information.
                       </p>
                     </div>
                   </Col>
@@ -105,11 +104,9 @@ function AboutUs() {
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto text-center" md="8">
-                  <h2 className="title">We have many advantages</h2>
+                  <h2 className="title">What are our Goals?</h2>
                   <h4 className="description">
-                    This is the paragraph where you can write more details about
-                    your projects. Keep you user engaged by providing meaningful
-                    information.
+                    Iloilo Integrated School is the pioneer school in advocating the Multiple Intelligences theory in the City. We aim to facilitate the growth of the children's Multiple Intelligences through activity based hands-on learning.
                   </h4>
                   <div className="section-space"></div>
                 </Col>
@@ -117,129 +114,89 @@ function AboutUs() {
               <Row>
                 <Col className="ml-auto" md="5">
                   <Card
-                    className="card-background card-background-product card-raised"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/project8.jpg") + ")",
-                    }}
+                    className="card-raised"
                   >
-                    <CardBody>
-                      <CardTitle tag="h2">Social Analytics</CardTitle>
-                      <p className="card-description">
-                        Insight to help you create, connect, and convert.
-                        Understand Your Audience's Interests, Influence,
-                        Interactions, and Intent. Discover emerging topics and
-                        influencers to reach new audiences.
-                      </p>
-                      <Badge className="badge-neutral">Analytics</Badge>
-                    </CardBody>
+                  <div className="card-image">
+                    <img
+                      alt="..."
+                      className="img rounded"
+                      src={Asset1}
+                    ></img>
+                  </div>
                   </Card>
                 </Col>
                 <Col className="mr-auto" md="5">
                   <div className="info info-horizontal">
-                    <div className="icon icon-danger">
-                      <i className="now-ui-icons ui-2_chat-round"></i>
+                    <div className="icon icon-warning">
+                      <i className="now-ui-icons education_agenda-bookmark"></i>
                     </div>
                     <div className="description">
                       <h4 className="info-title">
-                        Listen to Social Conversations
+                        Knowledge
                       </h4>
                       <p className="description">
-                        Gain access to the demographics, psychographics, and
-                        location of unique people who talk about your brand.
+                        Build Knowledge and depth for understanding in the core disciplines and Multiple Intelligences.
                       </p>
                     </div>
                   </div>
                   <div className="info info-horizontal">
-                    <div className="icon icon-danger">
-                      <i className="now-ui-icons business_chart-pie-36"></i>
+                    <div className="icon icon-warning">
+                      <i className="now-ui-icons ui-2_chat-round"></i>
                     </div>
                     <div className="description">
-                      <h4 className="info-title">Performance Analyze</h4>
+                      <h4 className="info-title">Communication</h4>
                       <p className="description">
-                        Unify data from Facebook, Instagram, Twitter, LinkedIn,
-                        and Youtube to gain rich insights from easy-to-use
-                        reports.
+                        Communicate effectively through listening, speaking, writing, reading, visual, musical and symbolic forms.
                       </p>
                     </div>
                   </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-danger">
-                      <i className="now-ui-icons design-2_ruler-pencil"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Social Conversions</h4>
-                      <p className="description">
-                        Track actions taken on your website that originated from
-                        social, and understand the impact on your bottom line.
-                      </p>
-                    </div>
-                  </div>
+                 
                 </Col>
               </Row>
               <hr></hr>
               <Row>
                 <Col className="ml-auto mt-5" md="5">
-                  <div className="info info-horizontal">
-                    <div className="icon icon-warning">
-                      <i className="now-ui-icons users_single-02"></i>
+                   <div className="info info-horizontal">
+                    <div className="icon icon-danger">
+                      <i className="now-ui-icons users_circle-08"></i>
                     </div>
                     <div className="description">
-                      <h4 className="info-title">Work With Any Team</h4>
+                      <h4 className="info-title">Independence</h4>
                       <p className="description">
-                        Whether it’s for work or even the next family vacation,
-                        Trello helps your team.
+                        Become Independent learners who can think critically and creatively, undestand complex topics and apply knowledge to novel situations.
                       </p>
                     </div>
                   </div>
                   <div className="info info-horizontal">
-                    <div className="icon icon-warning">
-                      <i className="now-ui-icons business_chart-bar-32"></i>
+                    <div className="icon icon-danger">
+                      <i className="now-ui-icons ui-2_favourite-28"></i>
                     </div>
                     <div className="description">
-                      <h4 className="info-title">A Productivity Platform</h4>
+                      <h4 className="info-title">Values</h4>
                       <p className="description">
-                        Integrate the apps your team already uses directly into
-                        your workflow.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="info info-horizontal">
-                    <div className="icon icon-warning">
-                      <i className="now-ui-icons arrows-1_refresh-69"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Always In Sync</h4>
-                      <p className="description">
-                        No matter where you are, Trello stays in sync across all
-                        of your devices.
+                        Understand and value our connection to earth, spirit and humanity; and act as responsible global citizens who value diversity.
                       </p>
                     </div>
                   </div>
                 </Col>
                 <Col className="mr-auto" md="5">
                   <Card
-                    className="card-background card-background-product card-raised"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/project9.jpg") + ")",
-                    }}
+                    className="card-raised"
                   >
-                    <CardBody>
-                      <CardTitle tag="h2">Trello lets you work.</CardTitle>
-                      <p className="card-description text-white">
-                        Trello’s boards, lists, and cards enable you to organize
-                        and prioritize your projects in a fun, flexible and
-                        rewarding way.
-                      </p>
-                      <Badge className="badge-neutral">Trello</Badge>
-                    </CardBody>
+                    <div className="card-image">
+                      <img
+                        alt="..."
+                        className="img rounded"
+                        src={Asset3}
+                      ></img>
+                    </div>
                   </Card>
                 </Col>
               </Row>
               <hr />
             </Container>
           </div>
+          <AssetHeader source={Asset2} />
           <div className="about-team team-4">
             <Container>
               <Row>
@@ -477,6 +434,7 @@ function AboutUs() {
               <hr/>
             </Container>
           </div>
+          <MissionAndVision />
           <div className="about-office">
             <Container>
               <Row className="text-center">

@@ -22,7 +22,7 @@ function AboutUsHeader() {
   });
   return (
     <>
-      <div className="page-header page-header-small">
+      <div className="page-header page-header-large">
         <div
           className="page-header-image"
           style={{
@@ -33,11 +33,7 @@ function AboutUsHeader() {
         <div className="content-center">
           <Row>
             <Col className="ml-auto mr-auto" md="8">
-              <h1 className="title">About Us</h1>
-              <h4>
-                Meet the amazing team behind this project and find out more
-                about how we work.
-              </h4>
+              
             </Col>
           </Row>
         </div>
