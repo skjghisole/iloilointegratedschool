@@ -7,7 +7,6 @@ import Asset2 from "assets/img/iisAssets/coursel_asset_2.jpg"
 import Asset3 from "assets/img/iisAssets/coursel_asset_3.jpg"
 import Asset4 from "assets/img/iisAssets/coursel_asset_4.jpg"
 
-
 // core components
 const items = [
   {

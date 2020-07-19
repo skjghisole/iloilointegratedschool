@@ -4,4 +4,6 @@
 
 Stephen Karl Jeoffrey Hisole - Lead Software Engineer
 
-Jheo Enndi Corona            - Software Developer
+Jheo Enndi Corona            - Content Manager
+
+Keith Erwin Mikhail Patiño   - Head Content Manager

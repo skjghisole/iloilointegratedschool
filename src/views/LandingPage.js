@@ -28,6 +28,7 @@ import AssetCarousel from "components/Sections/AssetCarousel.js";
 import Asset1 from "assets/img/iisAssets/asset_1.jpg";
 import Asset2 from "assets/img/iisAssets/asset_2.jpg";
 import Asset3 from "assets/img/iisAssets/asset_3.jpg";
+import EnrollmentBanner from "assets/img/iisAssets/banner.jpg";
 import AccountPlaceholder from "assets/img/iisAssets/account_placeholder.png"
 
 const MapWrapper = withScriptjs(
@@ -404,6 +405,11 @@ function AboutUs() {
             </Container>
           </div>
           <AssetCarousel />
+          <div className="about-contact">
+            <Container>
+              <img src={EnrollmentBanner}/>
+            </Container>
+          </div>
           <div className="about-contact">
             <Container>
               <Row>
