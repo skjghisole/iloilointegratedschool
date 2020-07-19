@@ -457,7 +457,7 @@ function AboutUs() {
           <div className="about-contact">
             <Container>
               <Row>
-              <Col className="ml-auto mr-auto">
+                <Col className="ml-auto mr-auto" xs={12} md={6}>
                   <div className="info info-horizontal">
                     <div className="icon icon-info">
                       <i className="now-ui-icons location_pin"></i>
@@ -471,9 +471,8 @@ function AboutUs() {
                       </p>
                     </div>
                   </div>
-                  </Col>
-              <Col className="ml-auto mr-auto">
-
+                </Col>
+                <Col className="ml-auto mr-auto" xs={12} md={6}>
                   <div className="info info-horizontal">
                     <div className="icon icon-info">
                       <i className="now-ui-icons tech_mobile"></i>
@@ -484,23 +483,6 @@ function AboutUs() {
                         Jennifer Mae B. Lood <br></br>
                         (033) 321 3326 <br></br>
                         Hours or services may differ due to COVID-19 pandemic
-                      </p>
-                    </div>
-                  </div>
-                  </Col>
-              <Col className="ml-auto mr-auto">
-
-                  <div className="info info-horizontal">
-                    <div className="icon icon-info">
-                      <i className="business_briefcase-24 now-ui-icons"></i>
-                    </div>
-                    <div className="description">
-                      <h4 className="info-title">Legal Information</h4>
-                      <p>
-                        Creative Tim Ltd. <br></br>
-                        VAT · EN2341241 <br></br>
-                        IBAN · EN8732ENGB2300099123 <br></br>
-                        Bank · Great Britain Bank
                       </p>
                     </div>
                   </div>
