@@ -1,20 +1,18 @@
 import React from "react";
 // react plugin used to create DropdownMenu for selecting items
-import Select from "react-select";
+
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from "react-google-maps";
 
 // reactstrap components
 import {
-  Button,
   Card,
   CardBody,
-  CardFooter,
   CardTitle,
-  FormGroup,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
   Container,
   Row,
   Col,
@@ -29,11 +27,97 @@ import Footer from "components/Footers/Footer.js";
 import Asset1 from "assets/img/iisAssets/asset_1.jpg";
 import Asset2 from "assets/img/iisAssets/asset_2.jpg";
 import Asset3 from "assets/img/iisAssets/asset_3.jpg";
+import AccountPlaceholder from "assets/img/iisAssets/account_placeholder.png"
+
+const MapWrapper = withScriptjs(
+  withGoogleMap((props) => (
+    <GoogleMap
+      defaultZoom={13}
+      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
+      defaultOptions={{
+        scrollwheel: false,
+        styles: [
+          {
+            featureType: "water",
+            elementType: "geometry",
+            stylers: [{ color: "#e9e9e9" }, { lightness: 17 }],
+          },
+          {
+            featureType: "landscape",
+            elementType: "geometry",
+            stylers: [{ color: "#f5f5f5" }, { lightness: 20 }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.fill",
+            stylers: [{ color: "#ffffff" }, { lightness: 17 }],
+          },
+          {
+            featureType: "road.highway",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#ffffff" }, { lightness: 29 }, { weight: 0.2 }],
+          },
+          {
+            featureType: "road.arterial",
+            elementType: "geometry",
+            stylers: [{ color: "#ffffff" }, { lightness: 18 }],
+          },
+          {
+            featureType: "road.local",
+            elementType: "geometry",
+            stylers: [{ color: "#ffffff" }, { lightness: 16 }],
+          },
+          {
+            featureType: "poi",
+            elementType: "geometry",
+            stylers: [{ color: "#f5f5f5" }, { lightness: 21 }],
+          },
+          {
+            featureType: "poi.park",
+            elementType: "geometry",
+            stylers: [{ color: "#dedede" }, { lightness: 21 }],
+          },
+          {
+            elementType: "labels.text.stroke",
+            stylers: [
+              { visibility: "on" },
+              { color: "#ffffff" },
+              { lightness: 16 },
+            ],
+          },
+          {
+            elementType: "labels.text.fill",
+            stylers: [
+              { saturation: 36 },
+              { color: "#333333" },
+              { lightness: 40 },
+            ],
+          },
+          { elementType: "labels.icon", stylers: [{ visibility: "off" }] },
+          {
+            featureType: "transit",
+            elementType: "geometry",
+            stylers: [{ color: "#f2f2f2" }, { lightness: 19 }],
+          },
+          {
+            featureType: "administrative",
+            elementType: "geometry.fill",
+            stylers: [{ color: "#fefefe" }, { lightness: 20 }],
+          },
+          {
+            featureType: "administrative",
+            elementType: "geometry.stroke",
+            stylers: [{ color: "#fefefe" }, { lightness: 17 }, { weight: 1.2 }],
+          },
+        ],
+      }}
+    >
+      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
+    </GoogleMap>
+  ))
+);
 
 function AboutUs() {
-  const [specialitySelect, setSpecialitySelect] = React.useState(null);
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [emailFocus, setEmailFocus] = React.useState(false);
   React.useEffect(() => {
     document.body.classList.add("about-us");
     document.body.classList.add("sidebar-collapse");
@@ -155,7 +239,7 @@ function AboutUs() {
               </Row>
               <hr></hr>
               <Row>
-                <Col className="ml-auto mt-5" md="5">
+                <Col className="ml-auto mt-5 card-with-order-2" md="5">
                    <div className="info info-horizontal">
                     <div className="icon icon-danger">
                       <i className="now-ui-icons users_circle-08"></i>
@@ -179,7 +263,7 @@ function AboutUs() {
                     </div>
                   </div>
                 </Col>
-                <Col className="mr-auto" md="5">
+                <Col className="mr-auto card-with-order-1" md="5">
                   <Card
                     className="card-raised"
                   >
@@ -201,230 +285,113 @@ function AboutUs() {
             <Container>
               <Row>
                 <Col className="ml-auto mr-auto text-center" md="8">
-                  <h2 className="title">We are nerd rockstars</h2>
+                  <h2 className="title">Here are our Rockstars</h2>
                   <h4 className="description">
-                    This is the paragraph where you can write more details about
-                    your team. Keep you user engaged by providing meaningful
-                    information.
+                    
                   </h4>
                 </Col>
               </Row>
               <Row>
-                <Col className="ml-auto mr-auto" lg="7" xl="6">
+                <Col className="ml-auto mr-auto" md="6" xl="4">
                   <Card className="card-profile card-plain">
                     <Row>
-                      <Col md="5">
+                      <Col md="12">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <img
                               alt="..."
                               className="img img-raised rounded"
-                              src={require("assets/img/olivia.jpg")}
+                              src={AccountPlaceholder}
                             ></img>
                           </a>
                         </div>
-                      </Col>
-                      <Col md="7">
-                        <CardBody>
-                          <CardTitle tag="h4">Ella Evelyn</CardTitle>
-                          <h6 className="category">Air Crew Member</h6>
-                          <p className="card-description">
-                            Think in the morning. Act in the noon. Eat in the
-                            evening. Sleep in the night......
-                          </p>
-                          <CardFooter>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="twitter"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-twitter"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="facebook"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-facebook-square"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="google"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-google"></i>
-                            </Button>
-                          </CardFooter>
+                             <CardBody>
+                          <CardTitle tag="h4">RONNIE Z. SAMORO</CardTitle>
+                          <h6 className="category">President, Board of Trustees</h6>
                         </CardBody>
                       </Col>
                     </Row>
                   </Card>
                 </Col>
-                <Col className="ml-auto mr-auto" lg="7" xl="6">
+                <Col className="ml-auto mr-auto" lg="6" xl="4">
                   <Card className="card-profile card-plain">
                     <Row>
-                      <Col md="5">
+                      <Col md="12">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <img
                               alt="..."
                               className="img img-raised rounded"
-                              src={require("assets/img/emily.jpg")}
+                              src={AccountPlaceholder}
                             ></img>
                           </a>
                         </div>
-                      </Col>
-                      <Col md="7">
                         <CardBody>
-                          <CardTitle tag="h4">Mila Skylar</CardTitle>
-                          <h6 className="category">Architect</h6>
-                          <p className="card-description">
-                            Love cures people - both the ones who give it and
-                            the ones who receive it...
-                          </p>
-                          <CardFooter>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="linkedin"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-linkedin"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="facebook"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-facebook-square"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="dribbble"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-dribbble"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="google"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-google"></i>
-                            </Button>
-                          </CardFooter>
+                          <CardTitle tag="h4">FREDILYN G. SAMORO</CardTitle>
+                          <h6 className="category">Chief Operating Officer</h6>
                         </CardBody>
                       </Col>
                     </Row>
                   </Card>
                 </Col>
-                <Col className="ml-auto mr-auto" lg="7" xl="6">
+                <Col className="ml-auto mr-auto" lg="6" xl="4">
                   <Card className="card-profile card-plain">
                     <Row>
-                      <Col md="5">
+                      <Col md="12">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <img
                               alt="..."
                               className="img img-raised rounded"
-                              src={require("assets/img/james.jpg")}
+                              src={AccountPlaceholder}
                             ></img>
                           </a>
                         </div>
-                      </Col>
-                      <Col md="7">
                         <CardBody>
-                          <CardTitle tag="h4">Daniel Carter</CardTitle>
-                          <h6 className="category">Aviation Inspector</h6>
-                          <p className="card-description">
-                            Keep your face always toward the sunshine - and
-                            shadows will fall behind you...
-                          </p>
-                          <CardFooter>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="youtube"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fa fab-youtube"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="twitter"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-twitter"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="instagram"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-instagram"></i>
-                            </Button>
-                          </CardFooter>
+                          <CardTitle tag="h4">CHRISTINE JOY D. MONTERO</CardTitle>
+                          <h6 className="category">School Administrator</h6>
                         </CardBody>
                       </Col>
                     </Row>
                   </Card>
                 </Col>
-                <Col className="ml-auto mr-auto" lg="7" xl="6">
+                <Col className="ml-auto mr-auto" lg="6" xl="4">
                   <Card className="card-profile card-plain">
                     <Row>
-                      <Col md="5">
+                      <Col md="12">
                         <div className="card-image">
                           <a href="#pablo" onClick={(e) => e.preventDefault()}>
                             <img
                               alt="..."
                               className="img img-raised rounded"
-                              src={require("assets/img/michael.jpg")}
+                              src={AccountPlaceholder}
                             ></img>
                           </a>
                         </div>
-                      </Col>
-                      <Col md="7">
                         <CardBody>
-                          <CardTitle tag="h4">Dylan Wyatt</CardTitle>
-                          <h6 className="category">Conservation Scientist</h6>
-                          <p className="card-description">
-                            There is only one corner of the universe you can be
-                            certain of improving, and that's your own self...
-                          </p>
-                          <CardFooter>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="linkedin"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-linkedin"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="facebook"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-facebook-square"></i>
-                            </Button>
-                            <Button
-                              className="btn-icon btn-neutral"
-                              color="google"
-                              href="#pablo"
-                              onClick={(e) => e.preventDefault()}
-                            >
-                              <i className="fab fa-google"></i>
-                            </Button>
-                          </CardFooter>
+                          <CardTitle tag="h4">JENNIFER MAE B. LOOD</CardTitle>
+                          <h6 className="category">Administrative Assistant</h6>
+                        </CardBody>
+                      </Col>
+                    </Row>
+                  </Card>
+                </Col>
+                <Col className="ml-auto mr-auto" lg="6" xl="4">
+                  <Card className="card-profile card-plain">
+                    <Row>
+                      <Col md="12">
+                        <div className="card-image">
+                          <a href="#pablo" onClick={(e) => e.preventDefault()}>
+                            <img
+                              alt="..."
+                              className="img img-raised rounded"
+                              src={AccountPlaceholder}
+                            ></img>
+                          </a>
+                        </div>
+                        <CardBody>
+                          <CardTitle tag="h4">KAREN MARIE THELMA C. JESENA</CardTitle>
+                          <h6 className="category">School Director</h6>
                         </CardBody>
                       </Col>
                     </Row>
@@ -490,92 +457,65 @@ function AboutUs() {
           <div className="about-contact">
             <Container>
               <Row>
-                <Col className="mr-auto ml-auto" md="8">
-                  <h2 className="text-center title">Want to work with us?</h2>
-                  <h4 className="text-center description">
-                    Divide details about your product or agency work into parts.
-                    Write a few lines about each one and contact us about any
-                    further collaboration. We will get back to you in a couple
-                    of hours.
-                  </h4>
-                  <Form className="contact-form">
-                    <Row>
-                      <Col md="4">
-                        <label>First name</label>
-                        <InputGroup
-                          className={firstFocus ? "input-group-focus" : ""}
-                        >
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="now-ui-icons users_circle-08"></i>
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            autoComplete="firstname"
-                            placeholder="First Name..."
-                            type="text"
-                            onFocus={() => setFirstFocus(true)}
-                            onBlur={() => setFirstFocus(false)}
-                          ></Input>
-                        </InputGroup>
-                      </Col>
-                      <Col md="4">
-                        <label>Your email</label>
-                        <InputGroup
-                          className={emailFocus ? "input-group-focus" : ""}
-                        >
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="now-ui-icons ui-1_email-85"></i>
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            autoComplete="email"
-                            placeholder="Email Name..."
-                            type="text"
-                            onFocus={() => setEmailFocus(true)}
-                            onBlur={() => setEmailFocus(false)}
-                          ></Input>
-                        </InputGroup>
-                      </Col>
-                      <Col md="4">
-                        <FormGroup>
-                          <label className="control-label">Speciality</label>
-                          <Select
-                            className="react-select react-select-primary"
-                            onChange={(value) => setSpecialitySelect(value)}
-                            classNamePrefix="react-select"
-                            placeholder="Speciality"
-                            value={specialitySelect}
-                            name=""
-                            options={[
-                              {
-                                value: "1",
-                                label: "I'm a Designer",
-                              },
-                              { value: "2", label: "I'm a Developer" },
-                              { value: "3", label: "I'm a Hero" },
-                            ]}
-                          ></Select>
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col className="ml-auto mr-auto text-center" md="4">
-                        <Button
-                          className="btn-round mt-4"
-                          color="info"
-                          size="lg"
-                        >
-                          Let's talk
-                        </Button>
-                      </Col>
-                    </Row>
-                  </Form>
+              <Col className="ml-auto mr-auto">
+                  <div className="info info-horizontal">
+                    <div className="icon icon-info">
+                      <i className="now-ui-icons location_pin"></i>
+                    </div>
+                    <div className="description">
+                      <h4 className="info-title">Find us at</h4>
+                      <p>
+                        59 Taft St, <br></br>
+                        Mandurriao, Iloilo City,, <br></br>
+                        5000 Iloilo
+                      </p>
+                    </div>
+                  </div>
+                  </Col>
+              <Col className="ml-auto mr-auto">
+
+                  <div className="info info-horizontal">
+                    <div className="icon icon-info">
+                      <i className="now-ui-icons tech_mobile"></i>
+                    </div>
+                    <div className="description">
+                      <h4 className="info-title">Give us a ring</h4>
+                      <p>
+                        Jennifer Mae B. Lood <br></br>
+                        (033) 321 3326 <br></br>
+                        Hours or services may differ due to COVID-19 pandemic
+                      </p>
+                    </div>
+                  </div>
+                  </Col>
+              <Col className="ml-auto mr-auto">
+
+                  <div className="info info-horizontal">
+                    <div className="icon icon-info">
+                      <i className="business_briefcase-24 now-ui-icons"></i>
+                    </div>
+                    <div className="description">
+                      <h4 className="info-title">Legal Information</h4>
+                      <p>
+                        Creative Tim Ltd. <br></br>
+                        VAT · EN2341241 <br></br>
+                        IBAN · EN8732ENGB2300099123 <br></br>
+                        Bank · Great Britain Bank
+                      </p>
+                    </div>
+                  </div>
                 </Col>
               </Row>
             </Container>
           </div>
+        </div>
+        <div className="big-map" id="contactUs2Map">
+          <MapWrapper
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzhD73-qEGmMliWUdQW7OCAkxsT8Ov7-Q&callback=initMap"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `100%` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+          />
         </div>
         <Footer />
       </div>
