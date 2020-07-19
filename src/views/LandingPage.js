@@ -407,7 +407,7 @@ function AboutUs() {
           <AssetCarousel />
           <div className="about-contact">
             <Container>
-              <img src={EnrollmentBanner}/>
+              <img src={EnrollmentBanner} alt={"..."} />
             </Container>
           </div>
           <div className="about-contact">
