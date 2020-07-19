@@ -32,8 +32,8 @@ import AccountPlaceholder from "assets/img/iisAssets/account_placeholder.png"
 const MapWrapper = withScriptjs(
   withGoogleMap((props) => (
     <GoogleMap
-      defaultZoom={13}
-      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
+      defaultZoom={15}
+      defaultCenter={{ lat: 10.759090, lng: 122.574890 }}
       defaultOptions={{
         scrollwheel: false,
         styles: [
@@ -112,7 +112,7 @@ const MapWrapper = withScriptjs(
         ],
       }}
     >
-      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
+      <Marker position={{ lat: 122.574890, lng: 120.574890 }} />
     </GoogleMap>
   ))
 );
@@ -509,7 +509,12 @@ function AboutUs() {
             </Container>
           </div>
         </div>
-        <div className="big-map" id="contactUs2Map">
+        <div style={{
+          height: "80vh",
+          width: "100%",
+          display: "block",
+          position: "relative"
+        }}>
           <MapWrapper
             googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzhD73-qEGmMliWUdQW7OCAkxsT8Ov7-Q"
             loadingElement={<div style={{ height: `100%` }} />}
