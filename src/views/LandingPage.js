@@ -511,7 +511,7 @@ function AboutUs() {
         </div>
         <div className="big-map" id="contactUs2Map">
           <MapWrapper
-            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzhD73-qEGmMliWUdQW7OCAkxsT8Ov7-Q&callback=initMap"
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzhD73-qEGmMliWUdQW7OCAkxsT8Ov7-Q"
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
