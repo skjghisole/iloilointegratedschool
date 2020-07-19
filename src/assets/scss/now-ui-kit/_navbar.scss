@@ -1,13 +1,33 @@
 .iis {
     font-size: 1.5em !important;
     font-family: Comic Sans MS;
+    transition-duration: 0.7s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 760px) {
     .iis {
         font-size: 1.2em !important;
     }
 }
+
+@media (min-width: 680px) {
+    .iis-transform {
+        transform: translate(180px, 0px);
+    }
+}
+
+@media (min-width: 770px) {
+    .iis-transform {
+        transform: translate(270px, 0px);
+    }
+}
+
+@media (min-width: 1030px) {
+    .iis-transform {
+        transform: translate(340px, 0px);
+    }
+}
+
 
 .navbar{
     padding-top: $navbar-padding-base;

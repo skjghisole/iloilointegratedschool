@@ -8,9 +8,9 @@ import { Row, Col } from "reactstrap";
 function AboutUsHeader(props) {
   return (
     <>
-      <div className="page-header page-header-small">
+      <div className="page-header page-header-small card-raised">
         <div
-          className="page-header-image"
+          className={`page-header-image  ${props.parallax && "parallax-effect"}`}
           style={{
             backgroundImage: "url(" + props.source + ")",
             zIndex: "unset"

@@ -16,6 +16,7 @@ function ScrollTransparentNavbar() {
       ? ""
       : " navbar-transparent"
   );
+  const [brandTransition, setBrandTransition] = React.useState('');
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -23,11 +24,13 @@ function ScrollTransparentNavbar() {
         document.body.scrollTop > 499
       ) {
         setNavbarColor("");
+        setBrandTransition("iis-transform")
       } else if (
         document.documentElement.scrollTop < 500 ||
         document.body.scrollTop < 500
       ) {
         setNavbarColor(" navbar-transparent");
+        setBrandTransition("")
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -49,7 +52,7 @@ function ScrollTransparentNavbar() {
       <Navbar className={"fixed-top" + navbarColor} color="primary" expand="lg">
         <Container>
           <div className="navbar-translate">
-            <NavbarBrand to="/" tag={Link} id="navbar-brand" className="iis">
+            <NavbarBrand to="/" tag={Link} id="navbar-brand" className={`iis ${brandTransition}`}>
               <img src={Logo} alt={"..."} className="navbar-asset-logo"/>
               Iloilo Integrated School
             </NavbarBrand>

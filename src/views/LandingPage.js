@@ -24,6 +24,7 @@ import AboutUsHeader from "components/Headers/AboutUsHeader.js";
 import AssetHeader from "components/Headers/AssetHeader.js";
 import MissionAndVision from "components/Sections/MissionAndVision.js";
 import Footer from "components/Footers/Footer.js";
+import AssetCarousel from "components/Sections/AssetCarousel.js";
 import Asset1 from "assets/img/iisAssets/asset_1.jpg";
 import Asset2 from "assets/img/iisAssets/asset_2.jpg";
 import Asset3 from "assets/img/iisAssets/asset_3.jpg";
@@ -280,7 +281,8 @@ function AboutUs() {
               <hr />
             </Container>
           </div>
-          <AssetHeader source={Asset2} />
+          <AssetHeader source={Asset2} parallax={true} />
+          <MissionAndVision />
           <div className="about-team team-4">
             <Container>
               <Row>
@@ -401,59 +403,7 @@ function AboutUs() {
               <hr/>
             </Container>
           </div>
-          <MissionAndVision />
-          <div className="about-office">
-            <Container>
-              <Row className="text-center">
-                <Col className="ml-auto mr-auto" md="8">
-                  <h2 className="title">Our office is our second home</h2>
-                  <h4 className="description">
-                    Here are some pictures from our office. You can see the
-                    place looks like a palace and is fully equiped with
-                    everything you need to get the job done.
-                  </h4>
-                </Col>
-              </Row>
-              <Row>
-                <Col md="4">
-                  <img
-                    alt="..."
-                    className="rounded img-raised"
-                    src={require("assets/img/bg27.jpg")}
-                  ></img>
-                </Col>
-                <Col md="4">
-                  <img
-                    alt="..."
-                    className="rounded img-raised"
-                    src={require("assets/img/bg24.jpg")}
-                  ></img>
-                </Col>
-                <Col md="4">
-                  <img
-                    alt="..."
-                    className="rounded img-raised"
-                    src={require("assets/img/bg28.jpg")}
-                  ></img>
-                </Col>
-                <Col md="6">
-                  <img
-                    alt="..."
-                    className="rounded img-raised"
-                    src={require("assets/img/project6.jpg")}
-                  ></img>
-                </Col>
-                <Col md="6">
-                  <img
-                    alt="..."
-                    className="rounded img-raised"
-                    src={require("assets/img/project14.jpg")}
-                  ></img>
-                </Col>
-              </Row>
-              <hr/>
-            </Container>
-          </div>
+          <AssetCarousel />
           <div className="about-contact">
             <Container>
               <Row>
